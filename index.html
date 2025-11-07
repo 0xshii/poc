@@ -2,21 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>og:image scraper PoC</title>
-
-  <!-- 1) Normal URL pointing at your logging server (proves fetch/rehost) -->
-  <!-- Replace the URL below with a URL you control to see if the scraper requests it -->
-  <!-- <meta property="og:image" content="https://your-logging.example/poc-unique-1.png"> -->
-
-  <!-- 2) javascript: scheme (should be rejected or ignored by scrapers) -->
-  <meta property="og:image" content="javascript:console.log('poc-js-scheme')">
-
-  <!-- 3) data: SVG test (embedded svg). Use percent-encoding if necessary. -->
-  <!-- <meta property="og:image" content="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ctext%3EPOC%3C/text%3E%3C/script%3E%3C/svg%3E"> -->
-
+  <title>Redirector PoC</title>
+  <!-- Change the URL in content to your collaborator/logging URL. -->
+  <meta http-equiv="refresh" content="0; URL='google.com'">
 </head>
 <body>
-  <h1>OG Image PoC</h1>
-  <p>Edit the meta tag in the head to try different payloads; commit & Pages will publish.</p>
+ Redirecting...
 </body>
 </html>
