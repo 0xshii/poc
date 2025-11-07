@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>og:image test page</title>
+
+  <!-- SAFE: point to your logging endpoint to detect fetches -->
+  <!-- Example: uncomment one at a time while testing -->
+  <!-- <meta property="og:image" content="https://your-domain.example/poc-unique-1.png"> -->
+
+  <!-- javascript: scheme (should be rejected or ignored by scrapers) -->
+  <!-- <meta property="og:image" content="javascript:alert('XSS')"> -->
+
+  <!-- data URI with embedded SVG (test how scraper handles data URIs) -->
+  <!--
+  <meta property="og:image" content="data:image/svg+xml;charset=utf-8,
+  %3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cscript%3Ealert(1)%3C/script%3E%3C/svg%3E">
+  -->
+
+  <!-- Redirector test (use a hosted redirect file that 302s to another URL)
+       GitHub Pages cannot send 302 server-side, but you can host a page
+       that immediately meta-refresh or JS-redirect to test redirect-following. -->
+  <!-- <meta property="og:image" content="https://yourghpages.example/redirect-to-collab.html"> -->
+
+</head>
+<body>
+  <h1>og:image scraper test</h1>
+  <p>Uncomment a meta tag in the head and re-push to test different behaviors.</p>
+</body>
+</html>
