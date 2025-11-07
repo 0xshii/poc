@@ -2,29 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>og:image test page</title>
+  <title>og:image scraper PoC</title>
 
-  <!-- SAFE: point to your logging endpoint to detect fetches -->
-  <!-- Example: uncomment one at a time while testing -->
-  <!-- <meta property="og:image" content="https://your-domain.example/poc-unique-1.png"> -->
+  <!-- 1) Normal URL pointing at your logging server (proves fetch/rehost) -->
+  <!-- Replace the URL below with a URL you control to see if the scraper requests it -->
+  <!-- <meta property="og:image" content="https://your-logging.example/poc-unique-1.png"> -->
 
-  <!-- javascript: scheme (should be rejected or ignored by scrapers) -->
-  <!-- <meta property="og:image" content="javascript:alert('XSS')"> -->
+  <!-- 2) javascript: scheme (should be rejected or ignored by scrapers) -->
+  <meta property="og:image" content="javascript:console.log('poc-js-scheme')">
 
-  <!-- data URI with embedded SVG (test how scraper handles data URIs) -->
-  <!--
-  <meta property="og:image" content="data:image/svg+xml;charset=utf-8,
-  %3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cscript%3Ealert(1)%3C/script%3E%3C/svg%3E">
-  -->
-
-  <!-- Redirector test (use a hosted redirect file that 302s to another URL)
-       GitHub Pages cannot send 302 server-side, but you can host a page
-       that immediately meta-refresh or JS-redirect to test redirect-following. -->
-  <!-- <meta property="og:image" content="https://yourghpages.example/redirect-to-collab.html"> -->
+  <!-- 3) data: SVG test (embedded svg). Use percent-encoding if necessary. -->
+  <!-- <meta property="og:image" content="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Ctext%3EPOC%3C/text%3E%3C/script%3E%3C/svg%3E"> -->
 
 </head>
 <body>
-  <h1>og:image scraper test</h1>
-  <p>Uncomment a meta tag in the head and re-push to test different behaviors.</p>
+  <h1>OG Image PoC</h1>
+  <p>Edit the meta tag in the head to try different payloads; commit & Pages will publish.</p>
 </body>
 </html>
